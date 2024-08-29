@@ -30,10 +30,9 @@ public class UserList {
     //TODO: return true if process is completed, otherwise return false
     public boolean changePassword(String username, String oldPassword, String newPassword) {
         User user = this.findUserByUsername(username);
-        if (user != null) {
-            if (user.getPassword().equals(oldPassword)) {
-                user.setPassword(newPassword);
-            }
+        if (user != null && user.validatePassword(oldPassword)) {
+            user.setPassword(newPassword);
+            return true;
         }
         return false;
     }
@@ -43,7 +42,9 @@ public class UserList {
     public User login(String username, String password) {
         User user = this.findUserByUsername(username);
         if (user != null) {
-            user.validatePassword(password);
+            if(user.validatePassword(password)){
+                return user;
+            }
         }
         return null;
     }

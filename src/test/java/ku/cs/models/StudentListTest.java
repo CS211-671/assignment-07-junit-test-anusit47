@@ -51,14 +51,4 @@ class StudentListTest {
         assertEquals("A",list.findStudentById("6610450002").grade() );
     }
 
-//    @Test
-//    @DisplayName("ทดสอบการเพิ่มนิสิตแบบ 3 parameter")
-//    void testAddNewStudent(){
-//        StudentList list = new StudentList();
-//        list.addNewStudent("6610450001","StudentTest1",80);
-//        list.addNewStudent("6610450002","StudentTest2",90);
-//        list.addNewStudent("6610450003","StudentTest3",100);
-//        assertEquals(3, list.getStudents().size());
-//
-//    }
 }
